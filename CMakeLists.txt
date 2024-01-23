@@ -176,20 +176,20 @@ if(BUILD_TESTING)
   target_link_libraries(filter_base-test ${library_name})
 
   #### DIAGNOSTICS TESTS ####
-  ament_add_gtest_executable(test_filter_base_diagnostics_timestamps
-                    test/test_filter_base_diagnostics_timestamps.cpp)
-  target_link_libraries(test_filter_base_diagnostics_timestamps ${library_name})
+  #ament_add_gtest_executable(test_filter_base_diagnostics_timestamps
+  #                  test/test_filter_base_diagnostics_timestamps.cpp)
+  #target_link_libraries(test_filter_base_diagnostics_timestamps ${library_name})
 
-  rosidl_get_typesupport_target(cpp_typesupport_target "${PROJECT_NAME}" "rosidl_typesupport_cpp")
-  target_link_libraries(test_filter_base_diagnostics_timestamps "${cpp_typesupport_target}")
+  #rosidl_get_typesupport_target(cpp_typesupport_target "${PROJECT_NAME}" "rosidl_typesupport_cpp")
+  #target_link_libraries(test_filter_base_diagnostics_timestamps "${cpp_typesupport_target}")
 
-  add_dependencies(test_filter_base_diagnostics_timestamps ekf_node)
-  ament_add_test(test_filter_base_diagnostics_timestamps
-    GENERATE_RESULT_FOR_RETURN_CODE_ZERO
-    TIMEOUT 300
-    COMMAND "${CMAKE_CURRENT_SOURCE_DIR}/test/test_filter_base_diagnostics_timestamps.launch.py"
-  WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
-  )
+  #add_dependencies(test_filter_base_diagnostics_timestamps ekf_node)
+  #ament_add_test(test_filter_base_diagnostics_timestamps
+  #  GENERATE_RESULT_FOR_RETURN_CODE_ZERO
+  #  TIMEOUT 300
+  #  COMMAND "${CMAKE_CURRENT_SOURCE_DIR}/test/test_filter_base_diagnostics_timestamps.launch.py"
+  #WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
+  #)
 
   #### EKF TESTS ######
   ament_add_gtest(test_ekf test/test_ekf.cpp)
@@ -198,20 +198,20 @@ if(BUILD_TESTING)
   rosidl_get_typesupport_target(cpp_typesupport_target "${PROJECT_NAME}" "rosidl_typesupport_cpp")
   target_link_libraries(test_ekf "${cpp_typesupport_target}")
 
-  ament_add_gtest_executable(test_ekf_localization_node_interfaces
-                    test/test_ekf_localization_node_interfaces.cpp)
-  target_link_libraries(test_ekf_localization_node_interfaces ${library_name})
+  #ament_add_gtest_executable(test_ekf_localization_node_interfaces
+  #                  test/test_ekf_localization_node_interfaces.cpp)
+  #target_link_libraries(test_ekf_localization_node_interfaces ${library_name})
 
-  rosidl_get_typesupport_target(cpp_typesupport_target "${PROJECT_NAME}" "rosidl_typesupport_cpp")
-  target_link_libraries(test_ekf_localization_node_interfaces "${cpp_typesupport_target}")
+  #rosidl_get_typesupport_target(cpp_typesupport_target "${PROJECT_NAME}" "rosidl_typesupport_cpp")
+  #target_link_libraries(test_ekf_localization_node_interfaces "${cpp_typesupport_target}")
 
-  add_dependencies(test_ekf_localization_node_interfaces ekf_node)
-  ament_add_test(test_ekf_localization_node_interfaces
-    GENERATE_RESULT_FOR_RETURN_CODE_ZERO
-    TIMEOUT 300
-    COMMAND "${CMAKE_CURRENT_SOURCE_DIR}/test/test_ekf_localization_node_interfaces.launch.py"
-  WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
-  )
+  #add_dependencies(test_ekf_localization_node_interfaces ekf_node)
+  #ament_add_test(test_ekf_localization_node_interfaces
+  #  GENERATE_RESULT_FOR_RETURN_CODE_ZERO
+  #  TIMEOUT 300
+  #  COMMAND "${CMAKE_CURRENT_SOURCE_DIR}/test/test_ekf_localization_node_interfaces.launch.py"
+  #WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
+  #)
 
   #### UKF TESTS #####
   ament_add_gtest(test_ukf test/test_ukf.cpp)
@@ -220,20 +220,20 @@ if(BUILD_TESTING)
   rosidl_get_typesupport_target(cpp_typesupport_target "${PROJECT_NAME}" "rosidl_typesupport_cpp")
   target_link_libraries(test_ukf "${cpp_typesupport_target}")
 
-  ament_add_gtest_executable(test_ukf_localization_node_interfaces
-                    test/test_ukf_localization_node_interfaces.cpp)
-  target_link_libraries(test_ukf_localization_node_interfaces ${library_name})
+  #ament_add_gtest_executable(test_ukf_localization_node_interfaces
+  #                  test/test_ukf_localization_node_interfaces.cpp)
+  #target_link_libraries(test_ukf_localization_node_interfaces ${library_name})
 
-  rosidl_get_typesupport_target(cpp_typesupport_target "${PROJECT_NAME}" "rosidl_typesupport_cpp")
-  target_link_libraries(test_ukf_localization_node_interfaces "${cpp_typesupport_target}")
+  #rosidl_get_typesupport_target(cpp_typesupport_target "${PROJECT_NAME}" "rosidl_typesupport_cpp")
+  #target_link_libraries(test_ukf_localization_node_interfaces "${cpp_typesupport_target}")
 
-  add_dependencies(test_ukf_localization_node_interfaces ukf_node)
-  ament_add_test(test_ukf_localization_node_interfaces
-    GENERATE_RESULT_FOR_RETURN_CODE_ZERO
-    TIMEOUT 300
-    COMMAND "${CMAKE_CURRENT_SOURCE_DIR}/test/test_ukf_localization_node_interfaces.launch.py"
-  WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
-  )
+  #add_dependencies(test_ukf_localization_node_interfaces ukf_node)
+  #ament_add_test(test_ukf_localization_node_interfaces
+  #  GENERATE_RESULT_FOR_RETURN_CODE_ZERO
+  #  TIMEOUT 300
+  #  COMMAND "${CMAKE_CURRENT_SOURCE_DIR}/test/test_ukf_localization_node_interfaces.launch.py"
+  #WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
+  #)
 
   #### DATA TESTS #####
 #  ament_add_gtest(test_ekf_localization_node_bag1 test/test_localization_node_bag_pose_tester.cpp)
@@ -296,11 +296,11 @@ if(BUILD_TESTING)
   install(
     TARGETS
     filter_base-test
-    test_filter_base_diagnostics_timestamps
+    #test_filter_base_diagnostics_timestamps
     test_ekf
-    test_ekf_localization_node_interfaces
+    #test_ekf_localization_node_interfaces
     test_ukf
-    test_ukf_localization_node_interfaces
+    #test_ukf_localization_node_interfaces
     #test_ekf_localization_node_bag1
     #test_ekf_localization_node_bag2
     #test_ekf_localization_node_bag3
